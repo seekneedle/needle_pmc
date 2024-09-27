@@ -1,0 +1,19 @@
+ip: 0.0.0.0
+port: 8471
+log_level: info
+username: needle
+password: your_password
+
+
+#ES
+es_hosts : "http://ip:port"
+
+#filestore 
+filestore_root_dir : "res/knowledge"
+
+#MYSQL
+MYSQL_DB_USER : your_db_user
+MYSQL_DB_PASSWORD : your_db_password
+MYSQL_DB_HOST : your_db_host
+MYSQL_DB_NAME : your_db_name
+
