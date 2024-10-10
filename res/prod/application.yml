@@ -1,9 +1,15 @@
-ip: 0.0.0.0
-port: 8471
 log_level: info
+
+#basic_auth
 username: needle
 password: your_password
 
+#fastapi
+ip: 0.0.0.0
+port: 8471
+
+#xinference
+xinference_url = 'http://ip:port'
 
 #ES
 es_hosts : "http://ip:port"
