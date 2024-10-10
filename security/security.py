@@ -5,7 +5,7 @@ from cryptography.hazmat.primitives import padding
 import os
 
 
-researchlab_pwd = os.getenv('researchlab_pwd')
+needle_pwd = os.getenv('needle_pwd')
 
 
 def sha256_encode(data):
@@ -21,7 +21,7 @@ def hash_key(key_str):
     return hash_object.digest()[:32]
 
 
-def encrypt(plain_text, key_str):
+def encrypt(plain_text, key_str=needle_pwd):
     key = hash_key(key_str)
     backend = default_backend()
     iv = os.urandom(16)
@@ -33,7 +33,7 @@ def encrypt(plain_text, key_str):
     return (iv + encrypted_data).hex()
 
 
-def decrypt(cipher_text_hex, key_str=researchlab_pwd):
+def decrypt(cipher_text_hex, key_str=needle_pwd):
     key = hash_key(key_str)
     backend = default_backend()
     cipher_text = bytes.fromhex(cipher_text_hex)
@@ -47,9 +47,9 @@ def decrypt(cipher_text_hex, key_str=researchlab_pwd):
 
 
 if __name__ == '__main__':
-    # cipher_text = encrypt('hcc-rag', 'S2LI(#@slF')
+    # cipher_text = encrypt('mysql_pwd') #mysql真实密码
     # print(cipher_text)
-    # plain_text = decrypt(cipher_text, 'collection')
+    # plain_text = decrypt(cipher_text) 
     # print(plain_text)
 
     hash_value = sha256_encode("45355$%Dff")

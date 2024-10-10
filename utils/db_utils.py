@@ -2,6 +2,7 @@ from config import config
 from sqlalchemy import create_engine, Column, Integer, String  
 from sqlalchemy.ext.declarative import declarative_base  
 from sqlalchemy.orm import sessionmaker  
+from security import security
 
 
 Base = declarative_base()
@@ -15,7 +16,7 @@ class ConnectSQL:
     def __init__(self,
     ):   
         username = config['MYSQL_DB_USER']
-        password = config['MYSQL_DB_PASSWORD']
+        password = security.decrypt(config['MYSQL_DB_PASSWORD'])
         host = config['MYSQL_DB_HOST']
         database = config['MYSQL_DB_NAME']
         

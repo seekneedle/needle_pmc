@@ -1,6 +1,7 @@
 from haystack import Document, component
 from typing import List, Optional
 from xinference_client import RESTfulClient as Client
+from config import config
 
 
 @component
@@ -63,7 +64,7 @@ class OpenAISimilarityRanker:
             raise ValueError(
                 f"scale_score is True so calibration_factor must be provided, but got {calibration_factor}"
             )
-        self._xinference = 'http://10.26.9.148:9997'
+        self._xinference = config['xinference_url']
 
     @component.output_types(documents=List[Document])
     def run(
