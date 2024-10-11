@@ -23,3 +23,7 @@ MYSQL_DB_PASSWORD : your_db_password
 MYSQL_DB_HOST : your_db_host
 MYSQL_DB_NAME : your_db_name
 
+#LLM
+api_key: your_api_key
+base_url: your_base_url
+

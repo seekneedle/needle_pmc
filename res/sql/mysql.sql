@@ -1,4 +1,4 @@
-CREATE TABLE hcc_rag_store (  
+CREATE TABLE needle_store (  
     index_id BIGINT AUTO_INCREMENT,  
     index_name VARCHAR(100) NOT NULL,  
     PRIMARY KEY (index_id),  
