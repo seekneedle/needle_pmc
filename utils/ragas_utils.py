@@ -40,17 +40,17 @@ def get_score(data_samples):
     #     metrics.append(aspect_critique)
 
     nest_asyncio.apply()
-    one_api_key = config['api_key']
-    one_api_url = config['base_url']
+    api_key = config['api_key']
+    api_url = config['base_url']
     model_llm = ChatOpenAI(
-        model="sf/Qwen1.5-7B-Chat" if 'answer_relevancy' in data_metrics  else "ds/deepseek-chat",
-        api_key=one_api_key,  
-        base_url=one_api_url
+        model="Qwen1.5-7B-Chat",
+        api_key=api_key,  
+        base_url=api_url
     )
     model_embeddings = OpenAIEmbeddings(
         model="bge-m3",
-        base_url=one_api_url,
-        api_key=one_api_key,
+        base_url=api_url,
+        api_key=api_key,
         openai_api_type="open-ai"
     )
 
