@@ -29,8 +29,6 @@ def get_score(data_samples):
         metrics.append(context_recall)
     if 'context_precision' in data_metrics:
         metrics.append(context_precision)
-    if 'context_relevancy' in data_metrics:
-        metrics.append(context_precision)
     if 'answer_relevancy' in data_metrics:
         metrics.append(answer_relevancy)
     if 'context_entity_recall' in data_metrics:

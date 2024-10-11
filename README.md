@@ -8,7 +8,7 @@
 6. 删除向量知识库
 7. 删除向量知识库中的文件
 8. 向量知识库检索:支持rerank，需要搭建xinference
-9. RAG评估:支持的评估指标(faithfulness, answer_correctness, context_recall, context_precision, context_relevancy, answer_relevancy, context_entity_recall, answer_similarity)
+9. RAG评估:支持的评估指标(faithfulness, answer_correctness, context_recall, context_precision, answer_relevancy, context_entity_recall, answer_similarity)
 
 ## Environment preparation
 1. 安装xinference：xinference是一款开源模型推理平台，除了支持LLM，它还可以部署Embedding和ReRank模型。支持分布式部署。直接可提供支持openai api的接口。安装部署参考文档：https://inference.readthedocs.io/zh-cn/latest/getting_started/index.html。本项目中，用于提供ReRank模型。
