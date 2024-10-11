@@ -43,7 +43,7 @@ def get_score(data_samples):
     api_key = config['api_key']
     api_url = config['base_url']
     model_llm = ChatOpenAI(
-        model="Qwen1.5-7B-Chat",
+        model="Qwen1.5-7B-Chat", #评测依赖模型
         api_key=api_key,  
         base_url=api_url
     )
