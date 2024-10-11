@@ -8,6 +8,7 @@ from ragas.embeddings.base import LangchainEmbeddingsWrapper
 from ragas.run_config import RunConfig
 import nest_asyncio
 from langchain_openai import ChatOpenAI,OpenAIEmbeddings
+from config import config
 
 def get_score(data_samples):
     if data_samples is None:
@@ -41,13 +42,12 @@ def get_score(data_samples):
     #     metrics.append(aspect_critique)
 
     nest_asyncio.apply()
-    one_api_key = 'sk-p9GKPwvhmZvYeHN15aC400410f3249C6A4E6Fe559e6a6336' #AIT
-    one_api_url = 'http://10.26.9.148:3007/v1'
+    one_api_key = config['api_key']
+    one_api_url = config['base_url']
     model_llm = ChatOpenAI(
         model="sf/Qwen1.5-7B-Chat" if 'answer_relevancy' in data_metrics  else "ds/deepseek-chat",
-        #model="ds/deepseek-chat",
-        api_key="sk-p9GKPwvhmZvYeHN15aC400410f3249C6A4E6Fe559e6a6336",  #AIT
-        base_url="http://10.26.9.148:3007/v1"
+        api_key=one_api_key,  
+        base_url=one_api_url
     )
     model_embeddings = OpenAIEmbeddings(
         model="bge-m3",

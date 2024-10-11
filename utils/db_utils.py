@@ -7,7 +7,7 @@ from security import security
 
 Base = declarative_base()
 class Store(Base):
-    __tablename__ = 'hcc_rag_store'
+    __tablename__ = 'needle_store'
     index_id = Column(Integer, primary_key=True)
     index_name = Column(String)
 

@@ -11,9 +11,9 @@
 9. RAG评估:支持的评估指标(faithfulness, answer_correctness, context_recall, context_precision, context_relevancy, answer_relevancy, context_entity_recall, answer_similarity)
 
 ## Environment preparation
-1. 安装xinference：xinference是一款开源模型推理平台，除了支持LLM，它还可以部署Embedding和ReRank模型。支持分布式部署。直接可提供支持openai api的接口。安装部署参考文档：https://inference.readthedocs.io/zh-cn/latest/getting_started/index.html
-2. 安装ES
-3. 安装mysql(保存index_id和index_name的映射关系)
+1. 安装xinference：xinference是一款开源模型推理平台，除了支持LLM，它还可以部署Embedding和ReRank模型。支持分布式部署。直接可提供支持openai api的接口。安装部署参考文档：https://inference.readthedocs.io/zh-cn/latest/getting_started/index.html。本项目中，用于提供ReRank模型。
+2. 安装ES：本项目中使用ES作为向量数据库。
+3. 安装mysql：保存index_id和index_name的映射关系。
 
 ## Build docker image and upload to harbor
 ```sh
@@ -44,3 +44,9 @@ python main.py
 Run in background:
 ```sh
 sh run.sh
+```
+
+Shutdown background:
+```sh
+sh shutdown.sh
+```
