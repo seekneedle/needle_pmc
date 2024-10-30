@@ -1,6 +1,6 @@
 import logging
 import os
-from config import config
+from .config import config
 
 
 def get_log():
@@ -11,6 +11,9 @@ def get_log():
     logging.basicConfig(
         level=level,
         format='%(asctime)s - %(levelname)s - %(message)s',
-        filename=os.path.join(os.path.dirname(__file__), '..', 'output', 'app.log')
+        filename=os.path.join(os.path.dirname(__file__), '..', 'output', 'server.log')
     )
     return logging
+
+
+log = get_log()

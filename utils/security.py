@@ -5,6 +5,7 @@ from cryptography.hazmat.primitives import padding
 import os
 
 
+# Set environment with your own password
 needle_pwd = os.getenv('needle_pwd')
 
 
@@ -47,10 +48,10 @@ def decrypt(cipher_text_hex, key_str=needle_pwd):
 
 
 if __name__ == '__main__':
-    # cipher_text = encrypt('mysql_pwd') #mysql真实密码
-    # print(cipher_text)
-    # plain_text = decrypt(cipher_text) 
-    # print(plain_text)
+    cipher_text = encrypt('needle')  # Replace it with the text you need to encrypt
+    print(cipher_text)
+    plain_text = decrypt(cipher_text)
+    print(plain_text)
 
-    hash_value = sha256_encode("45355$%Dff")
+    hash_value = sha256_encode("needle")  # Replace it with the text you need to encode
     print(hash_value)

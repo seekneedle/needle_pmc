@@ -1,29 +1,12 @@
 log_level: info
 
-#basic_auth
 username: needle
-password: your_password
+# password get from utils.security sha256_encode(your_password)
+password: 3d58ae4c9423f50f324fedbf8c3c05818a72bcf74ca027072d07c3cf8e90aed0
 
-#fastapi
 ip: 0.0.0.0
 port: 8471
 
-#xinference
-xinference_url = 'http://ip:port'
-
-#ES
-es_hosts : "http://ip:port"
-
-#filestore 
-filestore_root_dir : "res/knowledge"
-
-#MYSQL
-MYSQL_DB_USER : your_db_user
-MYSQL_DB_PASSWORD : your_db_password
-MYSQL_DB_HOST : your_db_host
-MYSQL_DB_NAME : your_db_name
-
-#LLM
-api_key: your_api_key
-base_url: your_base_url
-
+origins:
+  - http://localhost
+  - http://localhost:8080
